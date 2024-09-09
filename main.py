@@ -3,9 +3,36 @@
 # Lab 1
 # Problem 1
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
+my_list = [1, 5, 'apple' , 20.5]
+
+
+print(my_list[2]) # Using indexing print the value 'apple'
+
+my_list.append(10) # add 10 at the end of the list 
+print(my_list)
+
+my_list.remove(20.5) # remove 20.5 from the list 
+print(my_list)
+
+my_list.reverse() # reverse the list 
+print(my_list)
+
+
 
 # Problem 2
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
+person = {'name':'John', 'age': 30, 'job':'teacher' }
+
+print(person.get('job') )#access and print  value for key 'job'
+
+person['city:']='Paris' #add new key, value pair to dictionary 
+print(person)
+
+del person['age'] #delete key, value pair 'age'
+print(person)
+
+for key, value in person.items(): #print each key,value pair on seperate lines
+    print(key,value)
 
 # -----------------------------------------------------------------------------
 
@@ -23,7 +50,21 @@ def test(did_pass):
 
 
 # Function 1: count_vowels
+
 def count_vowels(s: str) -> int:
+  
+    vowels = 'aeiou'
+
+    string = s.casefold()
+    count = 0
+   
+    for i in s.lower(): 
+        if i in vowels:
+            count += 1
+            return count 
+    else:
+        return string
+
     """
     Count the number of vowels in a string.
 
@@ -33,8 +74,8 @@ def count_vowels(s: str) -> int:
     Returns:
     - int: The number of vowels in the string
     """
-    # TODO: Implement this function
-    pass
+    # TO DO: Implement this function
+   # pass
 
 
 # Unit Tests for count_vowels
@@ -51,20 +92,26 @@ def test_count_vowels():
     test(count_vowels("rhythm") == 0)
 
 
-# Function 2: merge_lists
+# Function 2: merge_lists //Write a function that takes two sorted lists and merges them into a single sorted list. Implement the merging algorithm yourself using loops and comparisons.
 def merge_lists(list1: list, list2: list) -> list:
-    """
-    Merge two sorted lists into a single sorted list.
+     i = 0
+     j= 0
+     merged_list = []
+    
+    # Iterate over both lists and merge them
+     while i < len(list1) and j < len(list2):
+        if i < j:
+            merged_list.append(list1[i])
+            i += 1
+        else:
+            merged_list.append(list2[j])
+            j += 1
 
-    Parameters:
-    - list1 (list): The first sorted list
-    - list2 (list): The second sorted list
-
-    Returns:
-    - list: A new sorted list containing all elements from list1 and list2
-    """
-    # TODO: Implement this function
-    pass
+   
+        return merged_list
+     
+    # TO DO: Implement this function
+    #pass
 
 
 # Unit Tests for merge_lists
@@ -83,8 +130,19 @@ def test_merge_lists():
     test(merge_lists([1, 1, 2, 3], [1, 2, 2, 3]) == [1, 1, 1, 2, 2, 2, 3, 3])
 
 
-# Function 3: word_lengths
+# Function 3: word_lengths --> passed
 def word_lengths(words: list) -> list:
+    lengths = []
+  
+
+    for x in words: 
+       lengths.append(len(x))
+
+    return lengths
+
+
+
+
     """
     Get the lengths of words in a list.
 
@@ -94,8 +152,8 @@ def word_lengths(words: list) -> list:
     Returns:
     - list: A list containing the lengths of the words
     """
-    # TODO: Implement this function
-    pass
+    # TO DO: Implement this function
+    #pass
 
 
 # Unit Tests for word_lengths
@@ -105,24 +163,23 @@ def test_word_lengths():
     test(lengths == [5, 5, 6])
     test(word_lengths([]) == [])
     test(word_lengths(["word"]) == [4])
-    test(word_lengths(["short", "mediummm", "longesttttt"]) == [5, 8, 10])
+    test(word_lengths(["short", "mediummm", "longesttttt"]) == [5, 8, 11])
     test(word_lengths(["", "a", "ab", "abc"]) == [0, 1, 2, 3])
     test(word_lengths(["  ", "a b", " c "]) == [2, 3, 3])
 
 
 # Function 4: reverse_string
 def reverse_string(s: str) -> str:
-    """
-    Reverse a string.
+    
+    rev = ''
+    
+    for c in s: #loop through og string
+        rev = c + rev #build up new string but in reverse 
+        
+    return rev
 
-    Parameters:
-    - s (str): The input string
-
-    Returns:
-    - str: The reversed string
-    """
-    # TODO: Implement this function
-    pass
+    # TO DO: Implement this function
+   # pass
 
 
 # Unit Tests for reverse_string
@@ -139,7 +196,25 @@ def test_reverse_string():
 
 
 # Function 5: intersection
-def intersection(list1: list, list2: list) -> list:
+def intersection(list1: list, list2: list) -> list: 
+ 
+    count_dict = {}
+    inter = []
+    
+    # Count occurrences of each item in list1
+    for item in list1:
+        count_dict[item] = count_dict.get(item, 0) + 1
+    
+    # Check for each item in list2 if it's in the count_dict
+    for item in list2:
+        if item in count_dict and count_dict[item] > 0:
+            inter.append(item)
+            count_dict[item] = 0  # Ensure we only add each item once
+
+    return inter
+
+   
+
     """
     Find the intersection of two lists.
 
@@ -150,8 +225,9 @@ def intersection(list1: list, list2: list) -> list:
     Returns:
     - list: The intersection of the two lists
     """
-    # TODO: Implement this function
-    pass
+    # TO DO: Implement this function
+    
+    #pass
 
 
 # Unit Tests for intersection

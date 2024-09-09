@@ -304,15 +304,33 @@ By using these unit tests, we can easily verify that our functions behave as exp
 
 ### Questions:
 
-1. What are the three main characteristics of a list in Python?
-2. How do you create an empty list?
-3. Name two general uses for lists.
-4. What method would you use to add an element to the end of a list?
-5. How do you remove a specific element from a list?
+1. What are the three main characteristics of a list in Python? 
+        Ordered, Mutable & allow duplicate elements
+
+2. How do you create an empty list? 
+        new_list=[]
+
+3. Name two general uses for lists. 
+--> Storing Data & Sorting/Filtering data 
+
+4. What method would you use to add an element to the end of a list? 
+        append()
+
+5. How do you remove a specific element from a list? 
+-->remove()
+
 6. What is slicing in the context of lists?
-7. How can you find the index of a specific element in a list?
+--> Accessing a subset or a specified portion of a list by using list[start:end]
+
+7. How can you find the index of a specific element in a list? 
+-->Use index()
+
 8. What does the `clear()` method do to a list?
-9. Can a list contain elements of different data types?
+    remove all elements in a list 
+
+9. Can a list contain elements of different data types? 
+--> Yes
+
 10. What would be the output of the `access_elements` function if passed `[1, 2, 3, 4]` as an argument?
 
 ---
