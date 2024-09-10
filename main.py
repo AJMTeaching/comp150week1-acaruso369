@@ -53,17 +53,15 @@ def test(did_pass):
 
 def count_vowels(s: str) -> int:
   
-    vowels = 'aeiou'
-
-    string = s.casefold()
+    vowels = 'aeiouAEIOU'
     count = 0
    
-    for i in s.lower(): 
+    for i in s: 
         if i in vowels:
             count += 1
-            return count 
-    else:
-        return string
+            
+    return count 
+    
 
     """
     Count the number of vowels in a string.
